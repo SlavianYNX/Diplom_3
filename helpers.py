@@ -1,7 +1,6 @@
 import requests
 import allure
 from data import UrlsApi, Ingredients
-from conftest import create_user
 
 
 class Order:
