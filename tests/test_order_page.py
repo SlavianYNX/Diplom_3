@@ -1,8 +1,9 @@
+import pytest
 import allure
 import helpers
 from helpers import Order
 from locators import locators
-from conftest import *
+from pages.main_page import HeaderPage
 from pages.order_page import OrderPage
 
 
