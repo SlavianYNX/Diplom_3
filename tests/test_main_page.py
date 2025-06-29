@@ -1,7 +1,6 @@
 import allure
 from data import UrlsApi
 from pages.main_page import HeaderPage, MainPage
-from conftest import driver
 
 
 class TestMainPage:
