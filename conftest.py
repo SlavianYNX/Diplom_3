@@ -26,9 +26,13 @@ def driver(request):
 def create_user():
     payload = RegUser.create_user_new()
     response = requests.post(UrlsApi.REG_USER, data=payload)
-    yield payload, response
-    token = response.json()["accessToken"]
-    requests.delete(UrlsApi.DEL_USER, headers={"Authorization": token})
+    if response.status_code == 200:
+        token = response.json().get("accessToken", "")
+        yield payload, response
+        if token:
+            requests.delete(UrlsApi.DELETE_USER, headers={'Authorization': token})
+    else:
+        yield payload, response
 
 
 @pytest.fixture()
