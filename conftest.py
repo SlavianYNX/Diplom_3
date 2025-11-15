@@ -1,3 +1,5 @@
+# В conftest.py добавить специальные опции для Firefox
+# В base_page.py увеличить WebDriverWait для Firefox
 import pytest
 import requests
 from selenium import webdriver
@@ -30,7 +32,7 @@ def create_user():
         token = response.json().get("accessToken", "")
         yield payload, response
         if token:
-            requests.delete(UrlsApi.DELETE_USER, headers={'Authorization': token})
+            requests.delete(UrlsApi.DEL_USER, headers={'Authorization': token})
     else:
         yield payload, response
 
@@ -44,6 +46,3 @@ def login(driver, create_user):
         login_page.login_auth(create_data_user["email"], create_data_user["password"])
         main_page = MainPage(driver)
         main_page.wait_place_order_btn()
-
-
-
