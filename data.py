@@ -3,8 +3,8 @@ from faker import Faker
 
 
 class UrlsApi:
-    MAIN = 'https://stellarburgers.nomoreparties.site/'
-    ORDER_LENT = 'https://stellarburgers.nomoreparties.site/feed'
+    MAIN = 'https://stellarburgers.education-services.ru/'
+    ORDER_LENT = 'https://stellarburgers.education-services.ru/feed'
     REG_USER = MAIN + '/api/auth/register'
     LOGIN_USER = MAIN + '/api/auth/login'
     ORDER_USER = MAIN + '/api/auth/order'
